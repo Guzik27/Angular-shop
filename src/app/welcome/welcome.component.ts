@@ -12,4 +12,8 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  name: string = 'Adam';
+  welcome:string = 'Witaj w sklepie';
+  enter:string = 'Wejdź';
+
 }
