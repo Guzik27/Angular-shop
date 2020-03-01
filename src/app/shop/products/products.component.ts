@@ -13,8 +13,16 @@ export class ProductsComponent implements OnInit {
   constructor(private productStorage: ProductStorageService) { }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
+
+
   products: Product[] = []; /*tworzymy pustą tablicę*/
+
+  /*tworzymy metodę komponentu i subskrybujemy*/
+  getProducts() {
+    this.productStorage.getProducts().subscribe(products=> this.products); /*product przypisujemy do tablicy products*/
+  }
 
 }
