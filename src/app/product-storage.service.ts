@@ -28,15 +28,24 @@ export class ProductStorageService {
   /*obsługa ID*/
   private idCount: number = 3;
   saveProduct(product: Product) {
-    product.id=this.idCount;
+   /* product.id=this.idCount;
     this.products.push(product);
-    this.idCount++;
+    this.idCount++;*/
+   /*sprawdzamy czy ma id, jeśli tak to edycja,. jeśli nie to dodajemy nowy i zapisujemy*/
+   if(product.id) {
+     const productIndex = this.products.findIndex(p => p.id === product.id);
+     this.products[productIndex] = product;
+   } else{
+     product.id=this.idCount;
+     this.products.push(product);
+     this.idCount++;
+   }
   }
 
   /*tworzymy metodę zwracającą pojedynczy produkt po id*/
   getProduct(id: number) {
     const productIndex = this.products.findIndex(p => p.id === id);
-    return this.{...this.products[productIndex]}; /*przekazujemy kopie zamiast bezpośrednich referencji*/
+    return {...this.products[productIndex]}; /*przekazujemy kopie zamiast bezpośrednich referencji*/
   }
 
 
