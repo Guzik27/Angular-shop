@@ -2,22 +2,22 @@
 
     <div class="uk-margin">
       <label>Nazwa</label>
-      <input [(ngModel)]="product.name" )] class="uk-input" type="text"> <!--zapewnia dwukierunkową zależnośc, udostępnia pol;e do uzupełnienia oraz wysyła je do właściwości któą zadeklarowaliśmy w product-->
+      <input [(ngModel)]="product.name" class="uk-input" type="text"> <!--zapewnia dwukierunkową zależnośc, udostępnia pol;e do uzupełnienia oraz wysyła je do właściwości któą zadeklarowaliśmy w product-->
     </div>
     <div class="uk-margin">
       <label>Cena</label>
-      <input [(ngModel)]="product.price" )] type="number" step="0.01" class="uk-input">
+      <input [(ngModel)]="product.price" type="number" step="0.01" class="uk-input">
     </div>
     <div class="uk-margin">
       <label>Ilość</label>
-      <input [(ngModel)]="product.quantity" )] type="number" class="uk-input">
+      <input [(ngModel)]="product.quantity" type="number" class="uk-input">
     </div>
     <div class="uk-margin">
       <label>Dostępny</label>
-      <input [(ngModel)]="product.available" )] type="checkbox" class="uk-checkbox">
+      <input [(ngModel)]="product.available" type="checkbox" class="uk-checkbox">
     </div>
     <input hidden type="number">
     <a routerLink="/shop"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a> <!--powró do listy produktów-->
-    <input (click)="saveProduct(product)" ) class="uk-button uk-button-primary" type="submit" value="Zapisz"> <!--metoda do zapisywania jeszcze nie istnieje, trzeba alt + enter -->
+    <input (click)="saveProduct(product)" class="uk-button uk-button-primary" type="submit" value="Zapisz"> <!--metoda do zapisywania jeszcze nie istnieje, trzeba alt + enter -->
 
 </div>
