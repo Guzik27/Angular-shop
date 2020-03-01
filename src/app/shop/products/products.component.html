@@ -22,7 +22,7 @@
       </td>
       <td style="width: 250px">
         <a><input type="button" class="uk-button uk-button-primary" value="Edytuj"></a>
-        <a><input type="button" class="uk-button uk-button-danger" value="Usuń"></a>
+        <a (click)="removeProduct(product.id)"><input type="button" class="uk-button uk-button-danger" value="Usuń"></a> <!--usuwamy kliknięciem-->
       </td>
     </tr>
     </tbody>

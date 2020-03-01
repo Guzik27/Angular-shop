@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
   }
 
   removeProduct(id:number) {
-
+    this.productStorage.removeProduct(id);
   }
 
 }
