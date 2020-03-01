@@ -27,7 +27,9 @@ export class ProductsComponent implements OnInit {
   }
 
   removeProduct(id:number) {
-    this.productStorage.removeProduct(id);
+    this.httpClient.removeProduct(id).subscribe( r => {
+      this.getProducts();
+    });
   }
 
 }

@@ -19,4 +19,9 @@ export class HttpClientService {
     return this.httpClient.get<Product[]>(`${BASE_URL}/products`)
   }
 
+  removeProduct(id: number) {
+    return this.httpClient.delete(`${BASE_URL}/products/remove/${id}`);
+
+  }
+
 }
