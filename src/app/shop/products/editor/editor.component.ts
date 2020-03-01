@@ -15,4 +15,7 @@ export class EditorComponent implements OnInit {
 
   product: Product = new Product(); /*dzięki temu odnosząc się z formularza do właściwści będziemy go wyświwtlali jako pusty*/
 
+  saveProduct(product: Product) {
+
+  }
 }

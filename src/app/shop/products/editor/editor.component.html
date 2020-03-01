@@ -18,6 +18,6 @@
     </div>
     <input hidden type="number">
     <a routerLink="/shop"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a> <!--powró do listy produktów-->
-    <input class="uk-button uk-button-primary" type="submit" value="Zapisz">
+    <input (click)="saveProduct(product)" ) class="uk-button uk-button-primary" type="submit" value="Zapisz"> <!--metoda do zapisywania jeszcze nie istnieje, trzeba alt + enter -->
 
 </div>

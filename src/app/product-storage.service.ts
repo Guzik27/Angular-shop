@@ -25,4 +25,12 @@ export class ProductStorageService {
     this.products.splice(productIndex, 1);
   }
 
+  /*obsługa ID*/
+  private idCount: number = 3;
+  saveProduct(product: Product) {
+    product.id=this.idCount;
+    this.products.push(product);
+    this.idCount++;
+  }
+
 }
