@@ -2,13 +2,13 @@
   <div class="uk-navbar-center">
     <a routerLink="/" class="uk-navbar-item uk-logo">Shop</a>
     <ul class="uk-navbar-nav">
-      <li class="uk-parent"><a>Produkty</a></li>
+      <li class="uk-parent"><a routerLink="products">Produkty</a></li>
       <li class="uk-parent"><a>Użytkownicy</a></li>
-      <li class="uk-parent"><a>Dostawa</a></li>
+      <li class="uk-parent"><a routerLink="shipping">Dostawa</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="uk-container uk-margin-large-top">
-<app-shipping></app-shipping>
+<router-outlet></router-outlet>
 </div>
