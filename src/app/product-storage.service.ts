@@ -36,7 +36,7 @@ export class ProductStorageService {
   /*tworzymy metodę zwracającą pojedynczy produkt po id*/
   getProduct(id: number) {
     const productIndex = this.products.findIndex(p => p.id === id);
-    return this.products[productIndex];
+    return this.{...this.products[productIndex]}; /*przekazujemy kopie zamiast bezpośrednich referencji*/
   }
 
 
