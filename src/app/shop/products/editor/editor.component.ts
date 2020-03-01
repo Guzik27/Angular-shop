@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from "../Product";
 import {ProductStorageService} from "../../../product-storage.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {HttpClientService} from "../../../http-client.service";
 
 @Component({
   selector: 'app-editor',
@@ -11,7 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class EditorComponent implements OnInit {
 
   /*wstrzykiwanie + po dodaniu przeniesienie do wszystkich produktów*/
-  constructor(private productStorage: ProductStorageService, private router: Router, private activeRoute: ActivatedRoute) { } /*wbudowane w angulara do obsługi adresów*/
+  constructor(private productStorage: ProductStorageService, private router: Router, private activeRoute: ActivatedRoute, private httpClient: HttpClientService) { } /*wbudowane w angulara do obsługi adresów*/
 
   ngOnInit(): void {
     this.getProductToEdit();
@@ -29,7 +30,7 @@ export class EditorComponent implements OnInit {
     this.activeRoute.paramMap.subscribe(params => {   /*działamy na tym co zwróci subskrypcja*/
       const id = params.get('id');
       if (id) {
-        this.product = this.productStorage.getProduct(Number.parseInt(id));
+        this.httpClient.getProduct(Number.parseInt(id)).subscribe(p => this.product = p);
       }
     })
   }
