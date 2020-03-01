@@ -22,7 +22,11 @@ export class ProductsComponent implements OnInit {
 
   /*tworzymy metodę komponentu i subskrybujemy*/
   getProducts() {
-    this.productStorage.getProducts().subscribe(products=> this.products = products); /*product przypisujemy do tablicy products*/
+    this.productStorage.getProducts().subscribe(products=> this.products = products); /*Przekazujemy kopie, a nie referencje. obserwator zwraca wartość, wartością są produkty, product przypisujemy do tablicy products*/
+  }
+
+  removeProduct(id:number) {
+
   }
 
 }

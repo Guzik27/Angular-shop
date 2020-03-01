@@ -18,4 +18,11 @@ export class ProductStorageService {
   getProducts(): Observable<Product[]> {
     return of(this.products); /* of zwraca Observable */
   }
+
+  removeProduct(id: number) {
+    /*p = iteracja po obiektach w tablicy*/
+  const productIndex = this.products.findIndex(p => p.id === id); /* find index iteruje pierwszy parametr(produkty), jeśli natrafi na iiterujące id to zwróci indeks tego elementu z tablicy*/
+    this.products.splice(productIndex, 1);
+  }
+
 }
