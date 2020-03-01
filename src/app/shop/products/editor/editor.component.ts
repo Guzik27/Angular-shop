@@ -26,7 +26,12 @@ export class EditorComponent implements OnInit {
 
   /*tworzymy metodę . WYwułuje się przy inicjalizacji edycji produktu*/
   getProductToEdit() {
-
+    this.activeRoute.paramMap.subscribe(params => {   /*działamy na tym co zwróci subskrypcja*/
+      const id = params.get('id');
+      if (id) {
+        this.product = this.productStorage.getProduct(Number.parseInt(id));
+      }
+    })
   }
 
 }
