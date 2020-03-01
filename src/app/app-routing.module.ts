@@ -12,8 +12,10 @@ const routes: Routes = [
   {path: 'shop', component: ShopComponent, children: [
       {path: '', component: ProductsComponent},
       {path: 'editor', component: EditorComponent},
+      {path: 'editor/:id', component: EditorComponent}, /*oczekujemy aby adres był w postaci editor/ i dynamicznie przydzielane id*/
       {path: 'products', component: ProductsComponent},
       {path: 'products/editor', component: EditorComponent},
+      {path: 'products/editor/:id', component: EditorComponent},
       {path: 'shipping', component: ShippingComponent}
     ]}
 ];
