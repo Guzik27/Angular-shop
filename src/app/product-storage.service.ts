@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Product} from "./shop/products/Product";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -13,4 +14,8 @@ export class ProductStorageService {
     {id:1, name:'Produkt2', price: 250.00, quantity: 300, available: false}
   ];
 
+  /*metoda która zwraca tablicę. Obiekt obserwable działa jak obserwator, żeby go obserwować trzeba zasubskrybować jak newsletter. Jeśli pojawią się zmiany w tablicy to dostaniemy ją od razu*/
+  getProducts(): Observable<Product[]> {
+    return of(this.products); /* of zwraca Observable */
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "./Product";
+import {ProductStorageService} from "../../product-storage.service";
 
 @Component({
   selector: 'app-products',
@@ -8,9 +9,12 @@ import {Product} from "./Product";
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  /*wstrzykujemy zależność (servis) */
+  constructor(private productStorage: ProductStorageService) { }
 
   ngOnInit(): void {
   }
+
+  products: Product[] = []; /*tworzymy pustą tablicę*/
 
 }
