@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Product} from "../Product";
 
 @Component({
   selector: 'app-editor',
@@ -11,5 +12,7 @@ export class EditorComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  product: Product = new Product(); /*dzięki temu odnosząc się z formularza do właściwści będziemy go wyświwtlali jako pusty*/
 
 }
