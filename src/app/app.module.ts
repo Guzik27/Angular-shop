@@ -9,6 +9,7 @@ import { ShippingComponent } from './shop/shipping/shipping.component';
 import { ProductsComponent } from './shop/products/products.component';
 import { EditorComponent } from './shop/products/editor/editor.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule /*bez tego ng modules nie zadziała*/
+    FormsModule, /*bez tego ng modules nie zadziała*/
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
