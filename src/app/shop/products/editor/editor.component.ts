@@ -21,8 +21,9 @@ export class EditorComponent implements OnInit {
   product: Product = new Product(); /*dzięki temu odnosząc się z formularza do właściwści będziemy go wyświwtlali jako pusty*/
 
   saveProduct(product: Product) {
-    this.productStorage.saveProduct(product);
-    this.router.navigate(['/shop'])
+    this.httpClient.saveProduct(product).subscribe(r => {
+      this.router.navigate(['/shop']); /*Jeżeli otrzymamy od servera odpiowiedź to możemy przenieśc użytkownika na ... ???  */
+    });
   }
 
   /*tworzymy metodę . WYwułuje się przy inicjalizacji edycji produktu*/
