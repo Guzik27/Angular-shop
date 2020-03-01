@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpHandler, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHandler, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {Product} from "./shop/products/Product";
 
 /*definicja głównego adresu którym bęziemy się łączyć z naszym serverem*/
 const BASE_URL='http://localhost:8082/api';
@@ -11,5 +13,10 @@ const HTTP_OPTIONS = {headers: new HttpHeaders({'Content-Type': 'application/jso
 })
 export class HttpClientService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+  getProducts(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(`${BASE_URL}/products`)
+  }
+
 }
