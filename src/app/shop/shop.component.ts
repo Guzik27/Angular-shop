@@ -12,4 +12,12 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  shippingMethodName1:string = 'Paczkomat';
+  shippingMethodName2:string = 'Kurier-przedpłata';
+  shippingMethodName3:string = 'Kurier-pobranie';
+
+  shippingMethodPrice1:number = 10.00;
+  shippingMethodPrice2:number = 15.50;
+  shippingMethodPrice3:number = 20.20;
+
 }
