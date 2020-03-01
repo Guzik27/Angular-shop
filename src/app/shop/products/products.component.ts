@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
 
   /*tworzymy metodę komponentu i subskrybujemy*/
   getProducts() {
-    this.productStorage.getProducts().subscribe(products=> this.products); /*product przypisujemy do tablicy products*/
+    this.productStorage.getProducts().subscribe(products=> this.products = products); /*product przypisujemy do tablicy products*/
   }
 
 }
