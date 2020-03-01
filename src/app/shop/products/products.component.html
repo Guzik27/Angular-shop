@@ -13,12 +13,12 @@
     </thead>
     <tbody>
     <tr *ngFor="let product of products; let i = index"> <!--pojedynczy product nazywa się produkt i bierzemy to z listy produktów -->
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
       <td>
-        <span></span>
+        <span [attr.uk-icon]="product.available ? 'check' : 'close'"></span> <!--w zależności od dostępności bęzie wstawione check lub close-->
       </td>
       <td style="width: 250px">
         <a><input type="button" class="uk-button uk-button-primary" value="Edytuj"></a>
