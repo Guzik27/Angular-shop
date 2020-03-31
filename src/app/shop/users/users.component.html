@@ -1,1 +1,36 @@
-<p>users works!</p>
+ <h2>Użytkownicy</h2>
+  <table class="uk-table uk-table-striped">
+    <thead>
+    <tr>
+      <th>User</th>
+      <th>Login</th>
+      <th>Email</th>
+      <th>Wiek</th>
+      <th>Kraj</th>
+      <th>Aktywny</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user for users; let i = index">
+      <td>{{user.userId}}</td>
+      <td>{{user.login}}</td>
+      <td>{{user.mail}}</td>
+      <td>{{user.number}}</td>
+      <td>{{user.country}}</td>
+      <td>{{user.available}}</td>
+      <td><span [attr.uk-icon]="user.available ? 'check' : 'close'"></span></td>
+      <td style="width: 250px">
+        <a routerLink="editor/{{user.userId}}"><input type="button" class="uk-button uk-button-primary" value="Edytuj"></a>
+<!--
+        <a (click)="removeUser(user.userId)"><input type="button" class="uk-button uk-button-danger" value="Usuń"></a>
+-->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <a routerLink="editor"><input style="background-color: #32d296; color: white" class="uk-button" type="button" value="Dodaj użytkownika"></a>
+    <a routerLink="inactive"><input class="uk-button uk-button-danger" value="Dezaktywuj wszystkich" type="button"></a>
+    <a routerLink="active"><input class="uk-button uk-button-primary" value="Aktywuj wszystkich" type="button"></a>
+  </div>
+

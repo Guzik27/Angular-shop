@@ -19,7 +19,9 @@ export class ProductsComponent implements OnInit {
 
 
 
-  products: Product[] = []; /*tworzymy pustą tablicę*/
+  products: Product[] = [
+  /*  {id:8, available:false, name:"Michał", price:88.00, quantity:785}*/   /*testowo dodałem*/
+  ]; /*tworzymy pustą tablicę*/
 
   /*tworzymy metodę komponentu i subskrybujemy*/
   getProducts() {

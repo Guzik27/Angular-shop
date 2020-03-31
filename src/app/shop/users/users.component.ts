@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from "./User";
 
 @Component({
   selector: 'app-users',
@@ -11,5 +12,10 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  users: User[] = [
+    {userId:1, age:35, login:"Damian", active:true, country:"Poland", mail:"mail@kkk.pl"},
+    {userId:44, age:59, login:"Leon", active:false, country:"Poland", mail:"leo@kkk.pl"}
+  ];
 
 }
