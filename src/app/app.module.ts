@@ -11,6 +11,7 @@ import { EditorComponent } from './shop/products/editor/editor.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { UsersComponent } from './shop/users/users.component';
+import { EditorUserComponent } from './shop/users/editor-user/editor-user.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { UsersComponent } from './shop/users/users.component';
     ProductsComponent,
     EditorComponent,
     UsersComponent,
+    EditorUserComponent,
   ],
   imports: [
     BrowserModule,

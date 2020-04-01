@@ -19,7 +19,8 @@
       <td>{{user.country}}</td>
       <td><span [attr.uk-icon]="user.active ? 'check' : 'close'"></span></td>
       <td style="width: 250px">
-        <a routerLink="editor/{{user.userId}}"><input type="button" class="uk-button uk-button-primary" value="Edytuj"></a>
+        <a routerLink="editor-user/{{user.userId}}"><input type="button" class="uk-button uk-button-primary" value="Edytuj"></a>
+
         <!--jeżeli chcemy po danym zdarzeniu wykonać akcję to zapisujemy w nawiasach okrągłych (np. click) -->
         <a (click)="removeUser(user.userId)"><input type="button" class="uk-button uk-button-danger" value="Usuń"></a>
       </td>
@@ -27,7 +28,7 @@
     </tbody>
   </table>
   <div>
-    <a routerLink="editor"><input style="background-color: #32d296; color: white" class="uk-button" type="button" value="Dodaj użytkownika"></a>
+    <a routerLink="editor-user"><input style="background-color: #32d296; color: white" class="uk-button" type="button" value="Dodaj użytkownika"></a>
     <a routerLink="inactive"><input class="uk-button uk-button-danger" value="Dezaktywuj wszystkich" type="button"></a>
     <a routerLink="active"><input class="uk-button uk-button-primary" value="Aktywuj wszystkich" type="button"></a>
   </div>
