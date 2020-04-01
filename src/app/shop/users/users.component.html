@@ -20,9 +20,8 @@
       <td><span [attr.uk-icon]="user.active ? 'check' : 'close'"></span></td>
       <td style="width: 250px">
         <a routerLink="editor/{{user.userId}}"><input type="button" class="uk-button uk-button-primary" value="Edytuj"></a>
-<!--
+        <!--jeżeli chcemy po danym zdarzeniu wykonać akcję to zapisujemy w nawiasach okrągłych (np. click) -->
         <a (click)="removeUser(user.userId)"><input type="button" class="uk-button uk-button-danger" value="Usuń"></a>
--->
       </td>
     </tr>
     </tbody>

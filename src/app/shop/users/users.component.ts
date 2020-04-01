@@ -23,4 +23,9 @@ export class UsersComponent implements OnInit {
     this.userStorage.getUsers().subscribe(users => this.users = users); /*zwraca nam wartość i tą wartość od obserwatora przypisujemy do users*/
   }
 
+  removeUser(id : number) {
+    this.userStorage.removeUser(id);
+
+  }
+
 }

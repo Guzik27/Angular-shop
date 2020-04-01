@@ -17,6 +17,16 @@ export class UserStorageService {
   getUsers(): Observable<User[]>{
     return of(this.users);
   }
+
+  removeUser(id : number) {
+
+    /* findIndex iteruje, a p - oznacza iteracje po obiektach w tablicy, w tym przypadku w users*/
+    /* jeśli natrafi na iterującego id to zwróci zwróci indeks tego elementu tablicy */
+
+    const userIndex = this.users.findIndex(p => p.userId === id);
+    this.users.splice(userIndex, 1);
+  }
+
 }
 
 
