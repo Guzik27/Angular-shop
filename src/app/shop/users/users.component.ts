@@ -25,7 +25,6 @@ export class UsersComponent implements OnInit {
 
   removeUser(id : number) {
     this.userStorage.removeUser(id);
-
   }
 
 }

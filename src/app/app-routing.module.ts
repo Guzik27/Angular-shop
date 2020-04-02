@@ -20,7 +20,8 @@ const routes: Routes = [
       {path: 'products/editor/:id', component: EditorComponent},
       {path: 'shipping', component: ShippingComponent},
       {path: 'users', component: UsersComponent},
-      {path: 'users/editor-user', component: EditorUserComponent}
+      {path: 'users/editor-user', component: EditorUserComponent},
+      {path: 'users/editor-user/:userId', component: EditorUserComponent}
     ]}
 ];
 
