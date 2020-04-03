@@ -25,9 +25,7 @@
       <input [(ngModel)]="user.active" type="checkbox" class="uk-checkbox">
     </div>
 
-<!--
-    <input [(ngModel)]="user.userId" type="number" hidden>
--->
+    <input [(ngModel)]="user.id" type="number" hidden>
     <a><input routerLink="/shop/users" class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
     <input (click) = "saveUser(user)" type="submit" class="uk-button uk-button-primary" value="Zapisz">
 </div>

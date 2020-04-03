@@ -22,40 +22,22 @@ export class EditorUserComponent implements OnInit {
   /*dzięki temu odnosząc się z formularza będziemy go wyświatlali jako pusty */
   user: User = new User();
 
-  /*saveUser(user: User) {
-    /!*this.userStorage.saveUser(user);*!/
-    this.httpClient.saveUser(user).subscribe(r => {
-      this.router.navigate(['/shop/users']);
-    })
-  }
-
-  /!*wyciągamy konkretnego usera i jego dane do edycji*!/
-  getUserToEdit() {
-    this.activeRoute.paramMap.subscribe(params => {
-      const userId = params.get('userId');
-      if (userId) {
-       /!* this.user = this.userStorage.getUser(Number.parseInt(userId))/!*.subscribe(p => this.user = p);*!/!*!/
-        this.httpClient.getUser(Number.parseInt(userId)).subscribe(p => this.user = p);
-      }
-    })
-  }*/
 
   saveUser(user: User) {
+    /*this.userStorage.saveUser(user);*/
     this.httpClient.saveUser(user).subscribe(r => {
       this.router.navigate(['/shop/users']);
-    });
+    })
   }
 
+  /*wyciągamy konkretnego usera i jego dane do edycji*/
   getUserToEdit() {
     this.activeRoute.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
-        // tslint:disable-next-line:radix
+       /* this.user = this.userStorage.getUser(Number.parseInt(userId))/!*.subscribe(p => this.user = p);*!/!*/
         this.httpClient.getUser(Number.parseInt(id)).subscribe(p => this.user = p);
       }
-    });
+    })
   }
-
-
-
 }
