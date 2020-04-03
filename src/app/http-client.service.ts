@@ -14,7 +14,8 @@ const HTTP_OPTIONS = {headers: new HttpHeaders({'Content-Type': 'application/jso
 })
 export class HttpClientService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   getProducts(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(`${BASE_URL}/products`)
@@ -34,20 +35,37 @@ export class HttpClientService {
 
   /*======================*/
 
+  /*
+    getUsers(): Observable<User[]> {
+      return this.httpClient.get<User[]>(`${BASE_URL}/users`);
+    }
+
+    removeUser(id: number) {
+      return this.httpClient.delete(`${BASE_URL}/users/remove/${id}`);
+    }
+
+    getUser(id: number): Observable<User> {
+      return this.httpClient.get<User>(`${BASE_URL}/users/single/${id}`);
+    }
+
+    saveUser(user: User) {
+      return this.httpClient.post(`${BASE_URL}/users/save`, JSON.stringify(user), HTTP_OPTIONS);
+    }*/
+
   getUsers(): Observable<User[]> {
-    return this.httpClient.get<User[]>(`${BASE_URL}/users`)
+    return this.httpClient.get<User[]>(`${BASE_URL}/users`);
   }
 
   removeUser(id: number) {
     return this.httpClient.delete(`${BASE_URL}/users/remove/${id}`);
   }
 
-  getUser(id: number): Observable<User> {
-    return this.httpClient.get<User>(`${BASE_URL}/users/single/${id}`)
+  getUser(id: number) {
+    return this.httpClient.get<User>(`${BASE_URL}/users/single/${id}`);
   }
 
   saveUser(user: User) {
-    return this.httpClient.post(`${BASE_URL}/userss/save`, JSON.stringify(user), HTTP_OPTIONS);
-  }
+    return this.httpClient.post(`${BASE_URL}/users/save`, JSON.stringify(user), HTTP_OPTIONS);
 
+  }
 }

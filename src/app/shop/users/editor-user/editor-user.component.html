@@ -1,9 +1,9 @@
 <div style="width: 400px; margin: auto">
-   <!-- <div class="uk-margin">
+    <div class="uk-margin">
       <label>User</label>
-      &lt;!&ndash;taki zapis umożliwia dwukierunkową dostępność. Mamy dostęp w przypadku edycji i zapisu oraz wysyła do właściwości produkt &ndash;&gt;
-      <input [(ngModel)]="user.userId" type="number" class="uk-input">
-    </div>-->
+      <!--taki zapis umożliwia dwukierunkową dostępność. Mamy dostęp w przypadku edycji i zapisu oraz wysyła do właściwości produkt -->
+      <input [(ngModel)]="user.id" type="number" class="uk-input">
+    </div>
     <div class="uk-margin">
       <label>Login</label>
       <input [(ngModel)]="user.login" type="text" class="uk-input">
@@ -25,7 +25,9 @@
       <input [(ngModel)]="user.active" type="checkbox" class="uk-checkbox">
     </div>
 
+<!--
     <input [(ngModel)]="user.userId" type="number" hidden>
+-->
     <a><input routerLink="/shop/users" class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
     <input (click) = "saveUser(user)" type="submit" class="uk-button uk-button-primary" value="Zapisz">
 </div>

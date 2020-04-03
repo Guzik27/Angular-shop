@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {User} from "./shop/users/User";
 import {Observable, of} from "rxjs";
-import {Product} from "./shop/products/Product";
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +9,23 @@ export class UserStorageService {
 
   constructor() { }
 
-  private users: User[] = [
-    {userId:1, age:35, login:"Damian", active:true, country:"Poland", mail:"mail@kkk.pl"},
-    {userId:2, age:59, login:"Leon", active:false, country:"Poland", mail:"leo@kkk.pl"}
-  ];
+  private users: User[] = [];
+
+ /* private users: User[] = [
+    {id:1, age:35, login:"Damian", active:true, country:"Poland", mail:"mail@kkk.pl"},
+    {id:2, age:59, login:"Leon", active:false, country:"Poland", mail:"leo@kkk.pl"}
+  ];*/
 
   getUsers(): Observable<User[]>{
     return of(this.users);
   }
 
-  removeUser(userId : number) {
+  removeUser(id : number) {
 
     /* findIndex iteruje, a p - oznacza iteracje po obiektach w tablicy, w tym przypadku w users*/
     /* jeśli natrafi na iterującego id to zwróci zwróci indeks tego elementu tablicy */
 
-    const userIndex = this.users.findIndex(p => p.userId === userId);
+    const userIndex = this.users.findIndex(p => p.id === id);
     this.users.splice(userIndex, 1);
   }
 
@@ -36,19 +37,19 @@ export class UserStorageService {
     this.users.push(user);
     this.userIdCount++
 */
-     if(user.userId) {
-       const userIndex = this.users.findIndex(p => p.userId === user.userId);
+     if(user.id) {
+       const userIndex = this.users.findIndex(p => p.id === user.id);
        this.users[userIndex] = user;
      } else{
-       user.userId=this.userIdCount;
+       user.id=this.userIdCount;
        this.users.push(user);
        this.userIdCount++;
      }
   }
 
-  getUser(userId: number) {
+  getUser(id: number) {
     /*poszukiwanie userId w tablicy :)*/
-    const userIndex = this.users.findIndex(p => p.userId === userId);
+    const userIndex = this.users.findIndex(p => p.id === id);
     /*przekazujemy referencje, a nie kopie, wyciągamy z tablicy user i przekazujemy konkretnego usera z Id*/
     /*przez to, jeśli klikniemy edytuj, a później anulujemy bez zapisywania to i tak zostanie zapisane*/
    /* return this.users[userIndex];*/
